@@ -904,9 +904,9 @@ button.carousel-card {
 
 .account-card-balance {
   font-family: var(--font-heading);
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 500;
-  line-height: 32px;
+  line-height: 48px;
   color: var(--text-primary);
 }
 
