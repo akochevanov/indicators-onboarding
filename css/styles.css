@@ -355,13 +355,32 @@ body.dialog-open .dialog-wrap .dialog {
 }
 
 .dialog-desc {
-  margin: 0;
+  margin: 0 0 8px;
   font-family: var(--font-body);
   font-size: 14px;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 18px;
   letter-spacing: 0.3px;
   color: var(--text-primary);
+}
+
+.dialog-list {
+  margin: 0 0 0 20px;
+  padding: 0;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.3px;
+  color: var(--text-primary);
+}
+
+.dialog-list li {
+  margin-bottom: 4px;
+}
+
+.dialog-list li:last-child {
+  margin-bottom: 0;
 }
 
 .dialog-actions {
@@ -527,8 +546,8 @@ body.sidebar-open .sidebar-overlay {
 .carousel-card {
   flex: 0 0 calc(33.333% - 11px);
   min-width: 280px;
-  height: 110px;
-  padding: 0 0 0 24px;
+  height: 100px;
+  padding: 0 0 0 16px;
   border-radius: var(--border-radius-md);
   display: flex;
   align-items: center;
@@ -557,6 +576,10 @@ button.carousel-card {
 .carousel-card-grey {
   background: #EFEAE0;
   color: #000;
+}
+
+#carousel-card-indicators {
+  background: #D8EAEC;
 }
 
 .carousel-card-title {
@@ -601,7 +624,7 @@ button.carousel-card {
 
 @media (max-width: 1220px) {
   .carousel-card {
-    height: 120px;
+    height: 110px;
   }
 }
 
@@ -1050,8 +1073,8 @@ a.btn {
   .carousel-card {
     flex: 0 0 100%;
     min-width: 0;
-    padding: 16px 0 16px 24px;
-    min-height: 140px;
+    padding: 16px 0 16px 16px;
+    min-height: 130px;
     height: auto;
   }
 }

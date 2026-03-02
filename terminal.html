@@ -14,7 +14,10 @@
   <div class="layout">
     <header class="header header-terminal">
       <div class="header-left">
-        <a href="index.html" class="header-brand header-brand-terminal">TradeApp</a>
+        <a href="index.html" class="header-brand header-brand-terminal">
+          <img src="css/images terminal/back.svg" alt="" width="20" height="20" class="header-brand-back-icon" aria-hidden="true" />
+          TradeApp
+        </a>
         <div class="terminal-symbols" role="tablist" aria-label="Symbols">
           <button type="button" class="terminal-symbol-tab terminal-symbol-tab-active" role="tab" aria-selected="true" aria-label="EUR/USD">
             <img src="css/images terminal/Currency Pair.png" alt="" width="32" height="32" class="terminal-symbol-tab-icon" />
@@ -85,6 +88,22 @@
             </div>
             <div class="terminal-chart-area">
               <div class="terminal-chart-placeholder">
+                <div class="terminal-chart-top-labels">
+                  <span class="terminal-chart-symbol-label" aria-hidden="true">EUR/USD</span>
+                  <div class="terminal-chart-ohlc" aria-hidden="true">
+                    <span class="terminal-chart-ohlc-item"><span class="terminal-chart-ohlc-key">O</span> <span class="terminal-chart-ohlc-val">1.17361</span></span>
+                    <span class="terminal-chart-ohlc-item"><span class="terminal-chart-ohlc-key">H</span> <span class="terminal-chart-ohlc-val">1.17370</span></span>
+                    <span class="terminal-chart-ohlc-item"><span class="terminal-chart-ohlc-key">L</span> <span class="terminal-chart-ohlc-val">1.17360</span></span>
+                    <span class="terminal-chart-ohlc-item"><span class="terminal-chart-ohlc-key">C</span> <span class="terminal-chart-ohlc-val">1.17370</span></span>
+                    <span class="terminal-chart-ohlc-change">+0.00010 (+0.01%)</span>
+                  </div>
+                </div>
+                <span class="terminal-chart-script-label" id="terminal-chart-script-label" aria-hidden="true">
+                  <span class="terminal-chart-script-label-text">Untitled script</span>
+                  <button type="button" class="terminal-chart-script-label-close" id="terminal-chart-script-label-close" aria-label="Remove script from chart">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg>
+                  </button>
+                </span>
                 <svg class="terminal-chart-svg" viewBox="0 0 400 200" preserveAspectRatio="none" aria-hidden="true" focusable="false">
                   <defs>
                     <linearGradient id="terminal-chart-line-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -262,10 +281,9 @@
 
     <div class="terminal-onboarding-overlay" id="terminal-onboarding-overlay" aria-hidden="true"></div>
     <div class="terminal-onboarding-tooltip" id="terminal-onboarding-tooltip" aria-hidden="true" role="dialog" aria-describedby="terminal-onboarding-tooltip-desc">
-      <p class="terminal-onboarding-tooltip-desc" id="terminal-onboarding-tooltip-desc">Your personal indicators are available here in addition to built-in indicators</p>
+      <p class="terminal-onboarding-tooltip-desc" id="terminal-onboarding-tooltip-desc">Click button 'Indicators' to create script for your first personal indicator</p>
       <div class="terminal-onboarding-tooltip-actions">
-        <button type="button" class="terminal-onboarding-tooltip-btn terminal-onboarding-tooltip-btn--secondary" id="terminal-onboarding-close">Close</button>
-        <button type="button" class="terminal-onboarding-tooltip-btn terminal-onboarding-tooltip-btn--primary" id="terminal-onboarding-open">Open Indicators</button>
+        <button type="button" class="terminal-onboarding-tooltip-btn terminal-onboarding-tooltip-btn--primary" id="terminal-onboarding-open">OK</button>
       </div>
     </div>
 
@@ -287,19 +305,18 @@
         <div class="terminal-indicators-dialog-body">
           <nav class="terminal-indicators-dialog-nav" aria-label="Indicator sections">
             <div class="terminal-indicators-dialog-nav-group">
-              <span class="terminal-indicators-dialog-nav-group-title">Built-in</span>
-              <button type="button" class="terminal-indicators-dialog-nav-item terminal-indicators-dialog-nav-item--active" data-section="technicals"><img src="css/images terminal/dialog1.svg" alt="" width="20" height="20" class="terminal-indicators-dialog-nav-item-icon">Technicals</button>
+              <span class="terminal-indicators-dialog-nav-group-title">Categories</span>
               <button type="button" class="terminal-indicators-dialog-nav-item" data-section="popular"><img src="css/images terminal/dialog2.svg" alt="" width="20" height="20" class="terminal-indicators-dialog-nav-item-icon">Popular</button>
+              <button type="button" class="terminal-indicators-dialog-nav-item" data-section="technicals"><img src="css/images terminal/dialog1.svg" alt="" width="20" height="20" class="terminal-indicators-dialog-nav-item-icon">Technicals</button>
             </div>
             <div class="terminal-indicators-dialog-nav-group">
-              <span class="terminal-indicators-dialog-nav-group-title">Personal</span>
               <button type="button" class="terminal-indicators-dialog-nav-item" data-section="favorites"><img src="css/images terminal/dialog3.svg" alt="" width="20" height="20" class="terminal-indicators-dialog-nav-item-icon">Favorites</button>
-              <button type="button" class="terminal-indicators-dialog-nav-item" data-section="my-scripts"><img src="css/images terminal/dialog4.svg" alt="" width="20" height="20" class="terminal-indicators-dialog-nav-item-icon">My scripts</button>
+              <button type="button" class="terminal-indicators-dialog-nav-item terminal-indicators-dialog-nav-item--active" data-section="my-scripts" aria-selected="true"><img src="css/images terminal/dialog4.svg" alt="" width="20" height="20" class="terminal-indicators-dialog-nav-item-icon">My scripts</button>
             </div>
             <button type="button" class="terminal-indicators-dialog-help" aria-label="Help Center"><img src="css/images terminal/dialog5.svg" alt="" width="20" height="20" class="terminal-indicators-dialog-help-icon">Help Center</button>
           </nav>
           <div class="terminal-indicators-dialog-panels">
-            <div class="terminal-indicators-dialog-panel is-active" data-section="technicals">
+            <div class="terminal-indicators-dialog-panel" data-section="technicals">
               <div class="terminal-indicators-dialog-list-wrap">
                 <span class="terminal-indicators-dialog-list-heading">Script name</span>
                 <ul class="terminal-indicators-dialog-list" role="list">
@@ -414,7 +431,7 @@
                 </ul>
               </div>
             </div>
-            <div class="terminal-indicators-dialog-panel" data-section="my-scripts">
+            <div class="terminal-indicators-dialog-panel is-active" data-section="my-scripts">
               <div class="terminal-indicators-dialog-empty">
                 <img src="css/images terminal/dialog-fx.svg" alt="" width="32" height="32" class="terminal-indicators-dialog-empty-icon">
                 <p class="terminal-indicators-dialog-empty-title">No scripts yet</p>
@@ -455,13 +472,13 @@
       var snackbar = document.getElementById('terminal-snackbar');
       var snackbarClose = document.getElementById('terminal-snackbar-close');
       var vertexPoints = document.getElementById('terminal-chart-vertex-points');
+      var scriptLabel = document.getElementById('terminal-chart-script-label');
       var indicatorsBtn = document.getElementById('terminal-indicators-btn');
       var indicatorsDialogWrap = document.getElementById('terminal-indicators-dialog-wrap');
       var indicatorsDialogClose = document.getElementById('terminal-indicators-dialog-close');
       var snackbarTimeout = null;
       var onboardingOverlay = document.getElementById('terminal-onboarding-overlay');
       var onboardingTooltip = document.getElementById('terminal-onboarding-tooltip');
-      var onboardingCloseBtn = document.getElementById('terminal-onboarding-close');
       var onboardingOpenBtn = document.getElementById('terminal-onboarding-open');
 
       function hasEditorContent() {
@@ -512,6 +529,21 @@
           vertexPoints.classList.add('is-visible');
           vertexPoints.setAttribute('aria-hidden', 'false');
         }
+        if (scriptLabel) {
+          scriptLabel.classList.add('is-visible');
+          scriptLabel.setAttribute('aria-hidden', 'false');
+        }
+      }
+
+      function hideChartVertexPoints() {
+        if (vertexPoints) {
+          vertexPoints.classList.remove('is-visible');
+          vertexPoints.setAttribute('aria-hidden', 'true');
+        }
+        if (scriptLabel) {
+          scriptLabel.classList.remove('is-visible');
+          scriptLabel.setAttribute('aria-hidden', 'true');
+        }
       }
 
       if (leadBtn) leadBtn.addEventListener('click', function () {
@@ -530,6 +562,9 @@
         showSnackbar();
         showChartVertexPoints();
       });
+
+      var scriptLabelClose = document.getElementById('terminal-chart-script-label-close');
+      if (scriptLabelClose) scriptLabelClose.addEventListener('click', hideChartVertexPoints);
 
       if (snackbarClose) snackbarClose.addEventListener('click', hideSnackbar);
 
@@ -609,10 +644,10 @@
         }
       }
 
-      if (onboardingCloseBtn) onboardingCloseBtn.addEventListener('click', hideOnboarding);
-      if (onboardingOpenBtn) onboardingOpenBtn.addEventListener('click', function () {
+      if (onboardingTooltip) onboardingTooltip.addEventListener('click', hideOnboarding);
+      if (onboardingOpenBtn) onboardingOpenBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
         hideOnboarding();
-        openIndicatorsDialog();
       });
 
       function closeIndicatorsAndOpenLeadPanel() {

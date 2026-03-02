@@ -26,11 +26,18 @@ body.terminal-page {
 }
 
 .terminal-page .header-terminal .header-brand-terminal {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
   font-size: 22px;
   font-weight: 500;
   color: #fff;
   margin-right: 8px;
   text-decoration: none;
+}
+
+.terminal-page .header-terminal .header-brand-back-icon {
+  flex-shrink: 0;
 }
 
 .terminal-page .header-terminal .header-brand-terminal:hover {
@@ -574,6 +581,119 @@ body.terminal-page {
   bottom: 12px;
   color: var(--term-text-muted);
   font-size: 12px;
+}
+
+.terminal-chart-symbol-label {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 1;
+  padding: 4px 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--term-text-secondary, rgba(255, 255, 255, 0.7));
+  background: transparent;
+  pointer-events: none;
+}
+
+.terminal-chart-top-labels {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  pointer-events: none;
+}
+
+.terminal-chart-top-labels .terminal-chart-symbol-label {
+  position: static;
+}
+
+.terminal-chart-ohlc {
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
+  padding: 4px 0;
+  font-size: 12px;
+  background: transparent;
+}
+
+.terminal-chart-ohlc-item {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 8px;
+}
+
+.terminal-chart-ohlc-item:first-of-type {
+  padding-left: 0;
+}
+
+.terminal-chart-ohlc-key {
+  color: #fff;
+  margin-right: 4px;
+}
+
+.terminal-chart-ohlc-val {
+  color: #3b82f6;
+}
+
+.terminal-chart-ohlc-change {
+  padding-left: 8px;
+  margin-left: 4px;
+  color: #3b82f6;
+}
+
+.terminal-chart-script-label {
+  position: absolute;
+  top: 40px;
+  left: 16px;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 4px 4px 8px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--term-text-secondary, rgba(255, 255, 255, 0.7));
+  background: var(--term-bg);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.terminal-chart-script-label.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.terminal-chart-script-label-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.terminal-chart-script-label-close:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.terminal-chart-script-label-close svg {
+  display: block;
 }
 
 .terminal-chart-svg {
@@ -1234,8 +1354,9 @@ body.terminal-page {
 
 .terminal-indicators-dialog-title {
   margin: 0;
-  font-size: 24px;
-  font-weight: 500;
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 400;
   color: var(--term-text);
 }
 
@@ -1486,7 +1607,7 @@ body.terminal-page {
 
 .terminal-indicators-dialog-empty-btn {
   height: 32px;
-  padding: 0 24px;
+  padding: 0 20px;
   border: none;
   border-radius: 4px;
   font: inherit;
@@ -1654,7 +1775,7 @@ body.terminal-page {
 
 .terminal-onboarding-tooltip-btn--secondary {
   height: 32px;
-  padding: 0 24px;
+  padding: 0 20px;
   background: transparent;
   color: rgba(255, 255, 255, 1);
   font-weight: 400;
@@ -1666,7 +1787,7 @@ body.terminal-page {
 
 .terminal-onboarding-tooltip-btn--primary {
   height: 32px;
-  padding: 0 24px;
+  padding: 0 20px;
   background: rgba(108, 133, 149, 0.16);
   color: rgba(255, 255, 255, 1);
   font-weight: 400;
