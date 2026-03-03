@@ -1781,8 +1781,34 @@ body.terminal-page {
   background-image: url("images terminal/favorite filled.svg");
 }
 
+/* Favorite state: star always visible and filled (Technicals, Popular, Favorites) */
+[data-section="technicals"] .terminal-indicators-dialog-list-item.is-favorite .terminal-indicators-dialog-list-item-icon,
+[data-section="popular"] .terminal-indicators-dialog-list-item.is-favorite .terminal-indicators-dialog-list-item-icon,
+[data-section="favorites"] .terminal-indicators-dialog-list-item .terminal-indicators-dialog-list-item-icon {
+  opacity: 1;
+  background-image: url("images terminal/favorite filled.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px 16px;
+}
+[data-section="favorites"] .terminal-indicators-dialog-list-item .terminal-indicators-dialog-list-item-icon {
+  cursor: pointer;
+}
+[data-section="technicals"] .terminal-indicators-dialog-list-item-icon,
+[data-section="popular"] .terminal-indicators-dialog-list-item-icon {
+  cursor: pointer;
+}
+
 .terminal-indicators-dialog-list-item:hover {
   background: rgba(255, 255, 255, 0.06);
+}
+
+.terminal-indicators-dialog-favorites-list {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
 }
 
 /* Terminal onboarding tooltip (Indicators hint on load) */

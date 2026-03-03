@@ -511,7 +511,11 @@ body.sidebar-open .sidebar-overlay {
 
 /* Sub-items (Summary, History, Dividends, Trading terminal): no left icon, indent for alignment */
 .nav-item-sub {
-  padding-left: 44px; /* 16px side + 16px icon + 12px gap = align with My accounts text */
+  padding-left: 44px; /* 16px side + 16px icon + 12px gap = align with parent item text */
+}
+
+.nav-item-no-icon {
+  padding-left: 44px;
 }
 
 .nav-icon-end {
