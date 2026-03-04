@@ -182,8 +182,9 @@ body {
 
 .notifications-popup {
   position: absolute;
-  top: calc(100% + 8px);
+  top: 44px;
   right: 0;
+  width: 360px;
   min-width: 320px;
   max-width: 400px;
   background: #fff;
@@ -201,6 +202,11 @@ body {
 .notifications-popup-item {
   padding: 12px 16px;
   border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.15s ease;
+}
+
+.notifications-popup-item:hover {
+  background: rgba(20, 29, 34, 0.04);
 }
 
 .notifications-popup-item:last-child {
@@ -363,7 +369,7 @@ body.dialog-open .dialog-wrap .dialog {
 .dialog-desc {
   margin: 0 0 8px;
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
   line-height: 21px;
   letter-spacing: 0.3px;
