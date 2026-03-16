@@ -130,7 +130,7 @@ body.terminal-page {
   border-color: transparent;
 }
 
-/* Terminal header icon-only buttons: 48×48, icon 24×24, with hover */
+/* Terminal header icon-only buttons: 48×48, icon 20×20, with hover */
 .terminal-page .header-terminal .header-btn-icon-only {
   width: 48px;
   min-width: 48px;
@@ -138,15 +138,13 @@ body.terminal-page {
 }
 
 .terminal-page .header-terminal .header-btn-icon-only img {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   display: block;
   object-fit: contain;
 }
 
 .terminal-page .header-terminal .header-btn-bell-terminal img {
-  width: 20px;
-  height: 20px;
   filter: brightness(0) invert(1);
 }
 
@@ -1672,6 +1670,7 @@ body.terminal-page {
   font-size: 14px;
   text-align: left;
   cursor: pointer;
+  text-decoration: none;
   transition: background 0.15s ease, color 0.15s ease;
 }
 
@@ -1776,6 +1775,9 @@ body.terminal-page {
 }
 
 .terminal-indicators-dialog-empty-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   height: 32px;
   padding: 0 20px;
   border: none;
@@ -1784,6 +1786,7 @@ body.terminal-page {
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .terminal-indicators-dialog-empty-btn--secondary {
