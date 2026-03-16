@@ -742,6 +742,14 @@
         }
 
         var favoriteIndicators = new Set();
+        try {
+          var stored = sessionStorage.getItem('terminal-indicators-favorites');
+          if (stored) {
+            var arr = JSON.parse(stored);
+            if (Array.isArray(arr)) arr.forEach(function (name) { favoriteIndicators.add(name); });
+          }
+        } catch (e) {}
+
         var favoritesEmptyEl = document.getElementById('terminal-indicators-dialog-favorites-empty');
         var favoritesListEl = document.getElementById('terminal-indicators-dialog-favorites-list');
         var favoritesUl = document.getElementById('terminal-indicators-dialog-favorites-ul');
@@ -751,11 +759,18 @@
           return label ? label.textContent.trim() : '';
         }
 
+        function saveFavoritesToSession() {
+          try {
+            sessionStorage.setItem('terminal-indicators-favorites', JSON.stringify(Array.from(favoriteIndicators)));
+          } catch (e) {}
+        }
+
         function toggleFavorite(name) {
           if (!name) return;
           if (favoriteIndicators.has(name)) favoriteIndicators.delete(name);
           else favoriteIndicators.add(name);
           updateFavoritesUI();
+          saveFavoritesToSession();
         }
 
         function updateFavoritesUI() {
