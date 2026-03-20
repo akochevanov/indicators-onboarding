@@ -1728,7 +1728,7 @@ body.terminal-page {
   flex-direction: column;
   gap: 20px;
   width: 100%;
-  max-width: 400px;
+  max-width: 424px;
   margin-bottom: 28px;
   text-align: left;
 }
